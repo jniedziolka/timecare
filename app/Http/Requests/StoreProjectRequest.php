@@ -14,7 +14,7 @@ class StoreProjectRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|string'
+            'name' => 'required|string|unique:App\Models\Project,name'
         ];
     }
 }
