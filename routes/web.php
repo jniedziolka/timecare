@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\TaskController;
+use App\Http\Controllers\TimelogController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +23,4 @@ Route::get('/', function () {
 
 Route::post('project', [ProjectController::class, 'store']);
 Route::post('task', [TaskController::class, 'store']);
+Route::post('timelog', [TimelogController::class, 'store']);
