@@ -17,10 +17,12 @@ use App\Http\Controllers\TimelogController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Route::post('project', [ProjectController::class, 'store']);
 Route::post('task', [TaskController::class, 'store']);
-Route::post('timelog', [TimelogController::class, 'store']);
+
+Route::controller(TimelogController::class)->group(function () {
+    Route::get('/', 'index')->name('timelog.index');
+    Route::post('timelog', 'store')->name('timelog.store');
+});
+
